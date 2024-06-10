@@ -11,16 +11,19 @@
  */
 class Solution {
 public:
-   void inorder(TreeNode *root,long num,long &sum){
-    if(!root)return;
-    num+=root->val;
-    if(!root->left && !root->right) sum+=num;
-    inorder(root->left,num*10,sum);
-    inorder(root->right,num*10,sum);
-   }
+    void inorder(TreeNode *root,long num,long &sum){
+        if(!root){
+            return;
+        }
+        num+=root->val;
+        if(!root->left && !root->right)sum+=num;
+        inorder(root->left,num*10,sum);
+        inorder(root->right,num*10,sum);
+    }
+      
     int sumNumbers(TreeNode* root) {
-    long nu=0,su=0;
-    inorder(root,nu,su);
-    return su;
+    long s=0,nm=0;
+    inorder(root,nm,s);
+    return s;
     }
 };
