@@ -6,8 +6,8 @@ class Solution:
                 m=i
                 c+=1
             elif m==i:
-                    c+=1
+                c+=1
             else:
-                 c-=1
+                c-=1
         return m
         
