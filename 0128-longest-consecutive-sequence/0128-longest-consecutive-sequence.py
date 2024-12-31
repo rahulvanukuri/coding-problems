@@ -7,6 +7,6 @@ class Solution:
                 l=0
                 while i+l  in ns:
                     l+=1
-            lo=max(lo,l)
+                lo=max(lo,l)
         return lo
         
