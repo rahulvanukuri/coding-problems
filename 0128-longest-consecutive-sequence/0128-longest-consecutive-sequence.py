@@ -7,7 +7,7 @@ class Solution:
                 l=0
                 while n+l in ns:
                     l+=1
-            lo=max(l,lo)
+                lo=max(l,lo)
         return lo
 
         
