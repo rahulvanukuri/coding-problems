@@ -4,11 +4,11 @@ public:
         int n=he.size();
         vector<int>l(n,-1);
         vector<int>r(n,n);
-        stack<int>p;
         stack<int>s;
+        stack<int>p;
         for(int i=0;i<n;i++){
             while(!s.empty() && he[s.top()]>=he[i]){
-                s.pop();
+              s.pop();
             }
             if(!s.empty()){
                 l[i]=s.top();
@@ -26,11 +26,10 @@ public:
         }
         int mx=0;
         for(int i=0;i<n;i++){
-            int wid=r[i]-l[i]-1;
-            int ar=wid*he[i];
+            int wi=r[i]-l[i]-1;
+            int ar=wi*he[i];
             mx=max(mx,ar);
         }
         return mx;
-
-    }
+        }
 };
