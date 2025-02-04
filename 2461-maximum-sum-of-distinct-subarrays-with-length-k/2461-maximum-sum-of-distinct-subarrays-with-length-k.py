@@ -4,9 +4,10 @@ class Solution:
         cs=0
         i=0
         s=set()
-        if len(nums)<k:
+        n=len(nums)
+        if n<k:
             return 0
-        for j in range(len(nums)):
+        for j in range(n):
             while nums[j]  in s or j-i+1>k:
                 s.remove(nums[i])
                 cs-=nums[i]
@@ -16,4 +17,4 @@ class Solution:
             if j-i+1==k:
                 ms=max(ms,cs)
         return ms
-     
+
