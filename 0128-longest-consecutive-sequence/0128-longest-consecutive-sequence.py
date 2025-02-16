@@ -5,7 +5,7 @@ class Solution:
         for i in nums:
             if i-1 not in ns:
                 l=0
-                while i+l  in ns:
+                while i+l in ns:
                     l+=1
                 lo=max(lo,l)
         return lo
