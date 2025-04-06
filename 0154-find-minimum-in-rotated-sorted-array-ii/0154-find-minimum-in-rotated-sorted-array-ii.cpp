@@ -5,10 +5,7 @@ public:
         int l=0,h=n-1,ans=nums[0];
         while(l<=h){
           int m=(l+h)/2;
-               if (nums[l] < nums[h]) {
-                ans = min(ans, nums[l]);
-                break;
-            }
+         
           if(nums[l]==nums[m] && nums[h]==nums[m]){
                ans = min(ans, nums[m]);
             l++;
