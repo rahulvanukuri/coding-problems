@@ -21,7 +21,7 @@ class Solution:
                     diffs2-=1
                 l+=1
             if r-l+1==n:
-                res=min(diffs1,diffs2)
+                res=min(res,diffs1,diffs2)
         return res
             
                 
