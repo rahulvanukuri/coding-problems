@@ -3,12 +3,12 @@ class Solution:
         n=len(s)
         s=s+s
         alt1,alt2="",""
-        diffs1,diffs2=0,0
         for i in range(len(s)):
-            alt1+="0" if i%2 else "1"
-            alt2+="1" if i%2 else "0"
+            alt1+="1" if i%2 else "0"
+            alt2+="0" if i%2 else "1"
         res=len(s)
         l=0
+        diffs1,diffs2=0,0
         for r in range(len(s)):
             if s[r]!=alt1[r]:
                 diffs1+=1
@@ -23,6 +23,7 @@ class Solution:
             if r-l+1==n:
                 res=min(res,diffs1,diffs2)
         return res
-            
+                
 
+            
         
