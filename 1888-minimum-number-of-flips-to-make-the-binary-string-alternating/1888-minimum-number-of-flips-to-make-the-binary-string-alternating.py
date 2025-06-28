@@ -4,10 +4,10 @@ class Solution:
         s=s+s
         alt1,alt2="",""
         for i in range(len(s)):
-            alt1+="1" if i%2 else "0"
-            alt2+="0" if i%2 else "1"
-        res=len(s)
+            alt1+="0" if i%2 else "1"
+            alt2+="1" if i%2 else "0"
         l=0
+        res=len(s)
         diffs1,diffs2=0,0
         for r in range(len(s)):
             if s[r]!=alt1[r]:
@@ -23,7 +23,5 @@ class Solution:
             if r-l+1==n:
                 res=min(res,diffs1,diffs2)
         return res
-                
 
-            
         
