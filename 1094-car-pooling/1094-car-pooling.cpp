@@ -1,28 +1,23 @@
 class Solution {
 public:
     bool carPooling(vector<vector<int>>& trips, int capacity) {
-        const int MAX_LOC = 1001;
-        vector<int> passenger_changes(MAX_LOC, 0);
+        int maxloc=1000;
+        vector<int>k(maxloc+1,0);
+        for(const auto &it:trips){
+            int numpa=it[0];
+            int fr=it[1];
+            int to=it[2];
+            k[fr]+=numpa;
+            k[to]-=numpa;
 
-        // Apply the difference array trick
-        for (const auto& trip : trips) {
-            int numPassengers = trip[0];
-            int from = trip[1];
-            int to = trip[2];
-
-            passenger_changes[from] += numPassengers;
-            passenger_changes[to] -= numPassengers;
         }
-
-        // Prefix sum to get current passenger count at each point
-        int current_passengers = 0;
-        for (int i = 0; i < MAX_LOC; ++i) {
-            current_passengers += passenger_changes[i];
-            if (current_passengers > capacity) {
+        int cup=0;
+        for(int i=0;i<maxloc+1;i++){
+            cup+=k[i];
+            if(cup>capacity){
                 return false;
             }
         }
-
         return true;
     }
 };
