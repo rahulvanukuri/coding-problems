@@ -1,7 +1,7 @@
 class TrieNode:
     def __init__(self):
         self.child={}
-        self.isend=False
+        self.wordend=False
 class Trie:
 
     def __init__(self):
@@ -14,7 +14,7 @@ class Trie:
             if c not in curr.child:
                 curr.child[c]=TrieNode()
             curr=curr.child[c]
-        curr.isend=True
+        curr.wordend=True
         
 
     def search(self, word: str) -> bool:
@@ -23,7 +23,7 @@ class Trie:
             if c not in curr.child:
                 return False
             curr=curr.child[c]
-        return curr.isend
+        return curr.wordend
 
         
 
@@ -34,6 +34,7 @@ class Trie:
                 return False
             curr=curr.child[c]
         return True
+        
 
 
 # Your Trie object will be instantiated and called as such:
