@@ -1,23 +1,20 @@
 class Solution {
 public:
-    void solve(vector<vector<int>>&ans , int index , vector<int>nums){
-        //base case
-        if(index>=nums.size()) {
+    void per(vector<int>&nums,int idx,vector<vector<int>>&ans){
+        if(idx>=nums.size()){
             ans.push_back(nums);
             return;
         }
-        // write one case and rest recursion will handle
-        for(int i = index;i<nums.size();i++){
-            swap(nums[index],nums[i]);
-            solve(ans , index+1 , nums);
-            //backtrack to again reach the consistent state
-            swap(nums[index],nums[i]);
+        for(int i=idx;i<nums.size();i++){
+            swap(nums[idx],nums[i]);
+            per(nums,idx+1,ans);
+            swap(nums[idx],nums[i]);
         }
     }
     vector<vector<int>> permute(vector<int>& nums) {
         vector<vector<int>>ans;
-        int index=0;
-        solve(ans , index , nums);
-        return ans;
+        int idx=0;
+         per(nums,idx,ans);
+         return ans;
     }
 };
