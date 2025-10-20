@@ -24,7 +24,7 @@ class WordDictionary:
             ch=word[idx]
             if ch=='.':
                 for n in node.child.values():
-                    if(dfs(idx+1,n)):
+                    if dfs(idx+1,n):
                         return True
                 return False
             else:
@@ -32,6 +32,7 @@ class WordDictionary:
                     return False
                 return dfs(idx+1,node.child[ch])
         return dfs(0,self.root)
+            
         
 
 
