@@ -3,7 +3,7 @@ class Solution:
         s,ma=0,float('-inf')
         for i in range(len(nums)):
             s+=nums[i]
-            if ma<s:
+            if s>ma:
                 ma=s
             if s<0:
                 s=0
